@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="android_version_names">
+        <item>Ice Cream Sandwich</item>
+        <item>Jelly Bean</item>
+        <item>KitKat</item>
+        <item>Lollipop</item>
+    </string-array>
+
+    <string-array name="android_version_numbers">
+        <item>4.0–4.0.4</item>
+        <item>4.1–4.3.1</item>
+        <item>4.4–4.4.4, 4.4W–4.4W.2</item>
+        <item>5.0–5.1.1</item>
+    </string-array>
+
+
+</resources>

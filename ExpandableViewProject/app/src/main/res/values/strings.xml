@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ExpandableViewProyect</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_prefix">Add </string>
+    <string name="android_names">Android Version Names</string>
+    <string name="android_numbers">Android Version Numbers</string>
+</resources>
