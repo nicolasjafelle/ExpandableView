@@ -18,7 +18,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * ExpandableView is a View showing only a visible content and when clicked on it, it displays more content in a fashion way.
+ * It can also handle inner ExpandableViews, one ExpandableView inside another and another.
+ */
 public class ExpandableView extends RelativeLayout {
 
     private static final int DURATION = 400;
@@ -100,25 +103,55 @@ public class ExpandableView extends RelativeLayout {
                 });
     }
 
+    /**
+     * Set the new Height of the visible content layout.
+     * @param newHeight
+     */
+    public void setVisibleLayoutHeight(int newHeight) {
+        this.clickableLayout.getLayoutParams().height = newHeight;
+    }
+
+    /**
+     * Set the parent's ViewGroup
+     * @param outsideContentLayout
+     */
     public void setOutsideContentLayout(ViewGroup outsideContentLayout) {
         this.outsideContentLayoutList.add(outsideContentLayout);
     }
 
+    /**
+     * Set the parent's ViewGroup, one or more than one.
+     * @param params
+     */
     public void setOutsideContentLayout(ViewGroup... params) {
         for (int i = 0; i < params.length; i++) {
             this.outsideContentLayoutList.add(params[i]);
         }
     }
 
+    /**
+     * Returns the Content LinearLayout, the LinearLayout that expands or collapse in a fashion way.
+     * @return The Content LinearLayout
+     */
     public LinearLayout getContentLayout() {
         return this.contentLayout;
     }
 
+    /**
+     * Add a view into the Content LinearLayout, the LinearLayout that expands or collapse in a fashion way.
+     * @param newContentView
+     */
     public void addContentView(View newContentView) {
         contentLayout.addView(newContentView);
         contentLayout.invalidate();
     }
 
+    /**
+     * Set the left drawable icon, the text to display, and if you want to use the chevron icon or plus icon.
+     * @param leftResId - 0 for no left drawable.
+     * @param text
+     * @param useChevron - true to use the chevron icon, false to use the plus icon
+     */
     public void fillData(int leftResId, String text, boolean useChevron) {
         textView.setText(text);
 
@@ -137,19 +170,38 @@ public class ExpandableView extends RelativeLayout {
         }
     }
 
+    /**
+     * Set the left drawable icon, the text to display, and if you want to use the chevron icon or plus icon.
+     * @param leftResId - 0 for no left drawable.
+     * @param stringResId
+     * @param useChevron - true to use the chevron icon, false to use the plus icon
+     */
     public void fillData(int leftResId, int stringResId, boolean useChevron) {
         fillData(leftResId, getResources().getString(stringResId), useChevron);
     }
 
+    /**
+     * Set the left drawable icon, the text to display using the plus icon by default.
+     * @param leftResId - 0 for no left drawable.
+     * @param text
+     */
     public void fillData(int leftResId, String text) {
         fillData(leftResId, text, false);
     }
 
+    /**
+     * Set the left drawable icon, the text to display using the plus icon by default.
+     * @param leftResId - 0 for no left drawable.
+     * @param stringResId
+     */
     public void fillData(int leftResId, int stringResId) {
         fillData(leftResId, getResources().getString(stringResId), false);
     }
 
 
+    /**
+     * Expand animation to display the discoverable content.
+     */
     public void expand() {
         //set Visible
         contentLayout.setVisibility(View.VISIBLE);
@@ -165,6 +217,9 @@ public class ExpandableView extends RelativeLayout {
         animator.start();
     }
 
+    /**
+     * Collapse animation to hide the discoverable content.
+     */
     public void collapse() {
         int finalHeight = contentLayout.getHeight();
 

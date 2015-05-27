@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity {
     private ExpandableView topExpandableView;
     private ExpandableView middleExpandableView;
 
-    private ExpandableView expandableView;
-    private ExpandableView expandableView2;
-    private ExpandableView expandableView3;
+    private ExpandableView expandableViewLevel1;
+    private ExpandableView expandableViewLevel2;
+    private ExpandableView expandableViewLevel3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +22,20 @@ public class MainActivity extends AppCompatActivity {
         topExpandableView = (ExpandableView) findViewById(R.id.activity_main_top_expandable_view);
         middleExpandableView = (ExpandableView) findViewById(R.id.activity_main_middle_expandable_view);
 
-        expandableView = new ExpandableView(this);
-        expandableView2 = new ExpandableView(this);
-        expandableView3 = new ExpandableView(this);
+        expandableViewLevel1 = new ExpandableView(this);
+        expandableViewLevel2 = new ExpandableView(this);
+        expandableViewLevel3 = new ExpandableView(this);
 
         createTopExpandableView();
         createMiddleExpandableView();
 
-        createInnerExpandableView();
-        createInnerExpandableView2();
-        createInnerExpandableView3();
+        createInnerExpandableViewLevel1();
+        createInnerExpandableViewLevel2();
+        createInnerExpandableViewLevel3();
 
-        expandableView.setOutsideContentLayout(topExpandableView.getContentLayout());
-        expandableView2.setOutsideContentLayout(topExpandableView.getContentLayout(), expandableView.getContentLayout());
-        expandableView3.setOutsideContentLayout(topExpandableView.getContentLayout(), expandableView.getContentLayout(), expandableView2.getContentLayout());
+        expandableViewLevel1.setOutsideContentLayout(topExpandableView.getContentLayout());
+        expandableViewLevel2.setOutsideContentLayout(topExpandableView.getContentLayout(), expandableViewLevel1.getContentLayout());
+        expandableViewLevel3.setOutsideContentLayout(topExpandableView.getContentLayout(), expandableViewLevel1.getContentLayout(), expandableViewLevel2.getContentLayout());
 
     }
 
@@ -53,40 +53,42 @@ public class MainActivity extends AppCompatActivity {
 
         topExpandableView.fillData(R.drawable.ic_android, getString(R.string.android_names), true);
         addContentView(topExpandableView, androidVersionNameList, true);
-        topExpandableView.addContentView(expandableView);
+        topExpandableView.addContentView(expandableViewLevel1);
     }
 
     private void createMiddleExpandableView() {
         String[] androidVersionNameList = getResources().getStringArray(R.array.android_version_names);
 
         middleExpandableView.fillData(R.drawable.ic_android, getString(R.string.android_names), false);
+        middleExpandableView.setVisibleLayoutHeight(getResources().getDimensionPixelSize(R.dimen.new_visible_height));
+
         addContentView(middleExpandableView, androidVersionNameList, false);
     }
 
-    private void createInnerExpandableView() {
+    private void createInnerExpandableViewLevel1() {
         String[] androidVersionNumberList = getResources().getStringArray(R.array.android_version_numbers);
 
-        expandableView.setBackgroundResource(android.R.color.holo_blue_light);
-        expandableView.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
-        addContentView(expandableView, androidVersionNumberList, false);
-        expandableView.addContentView(expandableView2);
+        expandableViewLevel1.setBackgroundResource(android.R.color.holo_blue_light);
+        expandableViewLevel1.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
+        addContentView(expandableViewLevel1, androidVersionNumberList, false);
+        expandableViewLevel1.addContentView(expandableViewLevel2);
     }
 
-    private void createInnerExpandableView2() {
+    private void createInnerExpandableViewLevel2() {
         String[] androidVersionNameList = getResources().getStringArray(R.array.android_version_names);
 
-        expandableView2.setBackgroundResource(android.R.color.holo_green_light);
-        expandableView2.fillData(R.drawable.ic_android, getString(R.string.android_names), false);
-        addContentView(expandableView2, androidVersionNameList, false);
-        expandableView2.addContentView(expandableView3);
+        expandableViewLevel2.setBackgroundResource(android.R.color.holo_green_light);
+        expandableViewLevel2.fillData(R.drawable.ic_android, getString(R.string.android_names), false);
+        addContentView(expandableViewLevel2, androidVersionNameList, false);
+        expandableViewLevel2.addContentView(expandableViewLevel3);
     }
 
-    private void createInnerExpandableView3() {
+    private void createInnerExpandableViewLevel3() {
         String[] androidVersionNumberList = getResources().getStringArray(R.array.android_version_numbers);
 
-        expandableView3.setBackgroundResource(android.R.color.holo_blue_light);
-        expandableView3.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
-        addContentView(expandableView3, androidVersionNumberList, false);
+        expandableViewLevel3.setBackgroundResource(android.R.color.holo_blue_light);
+        expandableViewLevel3.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
+        addContentView(expandableViewLevel3, androidVersionNumberList, false);
     }
 
 
