@@ -56,7 +56,7 @@ If you want to add content into the discoverable LinearLayout simple use:
 expandableView.addContentView(itemView); // itemView could be a simple TextView or more complex custom views
 ```
 
-The most relevant part of this ExpandableView is when you want to include an ExpandableView into another ExpandableView you need to pass the parents View, like this:
+The most relevant part of this ExpandableView is when you want to include an ExpandableView into another ExpandableView, you need to pass the parent's View hierarchy, like this:
 ``` java
 expandableViewLevel1.setOutsideContentLayout(topExpandableView.getContentLayout()); // 1 Level
 expandableViewLevel2.setOutsideContentLayout(topExpandableView.getContentLayout(), expandableViewLevel1.getContentLayout()); // 2 Levels
