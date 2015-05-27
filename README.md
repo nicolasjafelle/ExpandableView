@@ -5,7 +5,7 @@ ExpandableView is a View showing only a content and when clicked on it, it displ
 
 You can choose by default a "chevron" icon animation or a "plus" icon animation. The "always visible row" has a left icon, a text and finally a right icon which will be the animated one.
 
-./art/example.gif
+https://github.com/nicolasjafelle/ExpandableView/blob/master/art/example.gif
 
 Instructions - Maven Central
 ============
