@@ -1,6 +1,8 @@
 ExpandableView
 ==============
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ExpandableView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1898)
+
 ExpandableView is a View showing only a content and when clicked on it, it displays more content in a fashion way. You can add views or viewgroups but remember that it will only display the content in a LinearLayout with vertical orientation.<br>
 
 You can choose by default a "chevron" icon animation or a "plus" icon animation. The "always visible row" has a left icon, a text and finally a right icon which will be the animated one.
