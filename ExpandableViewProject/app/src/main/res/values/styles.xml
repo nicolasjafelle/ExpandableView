@@ -8,4 +8,11 @@
         <item name="colorAccent">@android:color/darker_gray</item>
     </style>
 
+    <!-- Use this style name to override the default style -->
+    <style name="ExpandableView_TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>

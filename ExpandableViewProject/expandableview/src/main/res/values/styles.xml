@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ExpandableView_TextView">
+        <!-- Base style to customize inner TextView inside visible content -->
+    </style>
+</resources>

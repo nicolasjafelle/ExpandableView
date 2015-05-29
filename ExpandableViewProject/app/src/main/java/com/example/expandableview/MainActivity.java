@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         String[] androidVersionNumberList = getResources().getStringArray(R.array.android_version_numbers);
 
         expandableViewLevel1.setBackgroundResource(android.R.color.holo_blue_light);
-        expandableViewLevel1.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
+        expandableViewLevel1.fillData(R.drawable.ic_android, getString(R.string.android_codes), false);
         addContentView(expandableViewLevel1, androidVersionNumberList, false);
         expandableViewLevel1.addContentView(expandableViewLevel2);
     }
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         String[] androidVersionNumberList = getResources().getStringArray(R.array.android_version_numbers);
 
         expandableViewLevel3.setBackgroundResource(android.R.color.holo_blue_light);
-        expandableViewLevel3.fillData(R.drawable.ic_android, getString(R.string.android_numbers), false);
+        expandableViewLevel3.fillData(R.drawable.ic_android, getString(R.string.android_codes), false);
         addContentView(expandableViewLevel3, androidVersionNumberList, false);
     }
 

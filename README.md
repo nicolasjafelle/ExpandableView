@@ -73,6 +73,15 @@ Also remember to use this package in your layout files:
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
 
+You can also customize the TextView inside the visible Content Layout in this way:
+	
+	<!-- Use this style name to override the default style -->
+	<style name="ExpandableView_TextView">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
 
 Developed By
 ================

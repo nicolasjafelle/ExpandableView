@@ -130,6 +130,14 @@ public class ExpandableView extends RelativeLayout {
     }
 
     /**
+     * Return the TextView located in the visible content.
+     * @return
+     */
+    public TextView getTextView() {
+        return this.textView;
+    }
+
+    /**
      * Returns the Content LinearLayout, the LinearLayout that expands or collapse in a fashion way.
      * @return The Content LinearLayout
      */
