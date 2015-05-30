@@ -170,7 +170,7 @@ public class ExpandableView extends RelativeLayout {
         }
 
         if (useChevron) {
-            DEGREES = -180;
+            DEGREES = 180;
             rightIcon.setImageResource(R.drawable.ic_expandable_view_chevron);
         } else {
             DEGREES = -225;
