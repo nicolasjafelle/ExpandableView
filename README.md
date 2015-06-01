@@ -16,7 +16,7 @@ Instructions - Maven Central
 
 ```groovy
 dependencies {
-    compile 'coming soon...'
+    compile 'com.github.nicolasjafelle:expandableview:1.0'
 }
 ```
 
